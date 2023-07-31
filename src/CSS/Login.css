@@ -1,0 +1,96 @@
+#loginMainDiv {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#loginFormDiv {
+    /* background-color: rgba(0,0,0,0.1); */
+    backdrop-filter: blur(20px);
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 15px 10px rgb(65, 59, 59);
+    box-sizing: border-box;
+}
+
+#loginForm {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.inputDiv {
+    width: 60%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    /* box-sizing: border-box; */
+} 
+
+.inputDiv> input:hover {
+    box-shadow: 0px 0px 20px 5px gray;
+}
+
+#usernameDiv > label {
+    margin-right: 77px;
+}
+#passwordDiv > label {
+    margin-right: 52px;
+}
+#passwordDiv > button {
+    padding: 5px;
+    margin-right: 70px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+}
+
+#error {
+    color: red;
+    margin: 15px 0px;
+}
+
+@media only screen and (max-width: 400px){
+    #loginFormDiv {
+        width: 90%;
+    } 
+    #loginForm {
+        align-items: flex-start;
+    }
+    #loginForm > div {
+        width: 100%;
+    }
+    #usernameDiv > label {
+        width: 125px;
+        margin-right: 0;
+    }
+    #loginForm > div#passwordDiv > label {
+        margin-right: 42px;
+    }
+    #loginForm > div#passwordDiv > input {
+        margin-right: 5px;
+    }
+    #loginForm > div#passwordDiv > button {
+        margin-right: 0;
+    }
+    #loginForm > div#submitDiv {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100px;
+    }
+}
