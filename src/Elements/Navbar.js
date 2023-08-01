@@ -5,31 +5,24 @@ import quoteContext from '../context/quotes/quoteContext'
 import axios from 'axios'
 const Navbar = () => {
     const {user, setUser,imgURL, getUser,setImgURL} = useContext(quoteContext);
-    // console.log(user)
     const navigate = useNavigate();
     const location = useLocation();
     const [img,setImg] = useState('');
-    // var [loading,setLoading] = useState(false);
-    // const [imgSrc,setImgSrc] = useState('');
-    
-    
+
     const closePicFormDiv = ()=>{
         setProperties(false)
         document.getElementById('profilePicDiv').style.display = "none"
         setImg('')
     }
     const handleImg = (e) => {
-        console.log(imgURL)
-        console.log("lllll")
+ 
         e.preventDefault()
         var url = e.target.value;
-        console.log(url)
-        console.log(e.target.files)
+
         setImg(e.target.files[0])
-        console.log("hjdgfdkhf")
+
         document.getElementById('uploadImg').src = window.URL.createObjectURL(e.target.files[0])
         document.getElementById('uploadImg').style.display = "block"
-        // document.getElementById('imgUploadBtn').disabled = false
       
     }
     const setProperties = (loading) => {
@@ -49,7 +42,6 @@ const Navbar = () => {
     }
     const uploadPic = async (e) => {
         e.preventDefault();
-        console.log("jhdkjfndj")
         
         setProperties(true)
         
@@ -60,14 +52,10 @@ const Navbar = () => {
         .then(async (res)=>{
             const data = await res.data;
             setImgURL(data.downloadURL)
-            console.log(data);
             setProperties(false)
-            // document.getElementById('profilePic').value = 
             getUser()
             closePicFormDiv();
         })
-        // document.getElementById('picFormDivUploadBtnI').classList.remove('fa-spin-plus')
-        // document.getElementById('picFormDivUploadBtnI').classList.add('fa-spin-plus')
     }
     const setProfilePic = (e) => {
         const picFormDiv = document.getElementById('profilePicDiv');
@@ -87,19 +75,16 @@ const Navbar = () => {
     const onUpdateProfile = (e) => {
         e.preventDefault();
         const profileUl = document.getElementById('profileUl')
-        // console.log("kjfjghfkjg")
         profileUl.style.display === "inline-flex" ? profileUl.style.display = "none" : profileUl.style.display = "inline-flex"
         closePicFormDiv()
     }
 
     const logout = (e) => {
         closePicFormDiv()
-        console.log("logoutt coalkd")
         setUser('')
         setImgURL('')
         // onLogo();
         navigate('/login')
-        console.log("logoutt coalkd")
     }
 
     const navigationFun = ()=> {

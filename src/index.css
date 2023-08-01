@@ -22,7 +22,7 @@ body::before {
   /* background: url('../public/bg-1.jpg') center center;
   background-size: cover;
   filter: saturate(5); */
-  background-image: radial-gradient(circle, #0bdee5 0%, #4cf56b 100%);
+  background-image: radial-gradient(circle, #60f7fd 0%, #72f88a 100%);
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

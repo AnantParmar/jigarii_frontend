@@ -10,16 +10,14 @@ const AddQuote = () => {
     const onAddQuote = (e)=> {
         e.preventDefault();
         
-        console.log(user)
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quote: quote, quoteTag: quoteTag, uid: user.uid })
         };
-        fetch('http://localhost:5000/api/quote/addQuote',requestOptions)
+        fetch('https://jigarii-backend.vercel.app/api/quote/addQuote',requestOptions)
         .then(async (response)=>{
             const data = await response.json();
-            console.log(data)
             navigate('/')
         })
     }

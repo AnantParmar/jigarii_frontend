@@ -31,11 +31,10 @@ const Login = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username: username, password: password })
         };
-        fetch('http://localhost:5000/api/auth/login', requestOptions)
+        fetch('https://jigarii-backend.vercel.app/api/auth/login', requestOptions)
         .then(async (response) => {
           const resPonse = await response.json();
           
-          console.log(resPonse)
           if(resPonse.result)
           {
             const user = resPonse.data.user;
@@ -53,20 +52,8 @@ const Login = () => {
           e.preventDefault();
           document.getElementById('error').innerText = error
         })
-        // .then((data) => {
-        //   console.log(data);
-        //   const url = data.photoURL;
-        //   setUser(url)
-        //   navigate('/')
-        // })
+
         
-        // fetch('http://localhost:5000/api/auth/login', 'post', (err, res) => {
-        // if(err)
-        // throw err;
-        // })
-        // .then((res)=>{
-        //     console.log(res);
-        // })
     }
 
   return (

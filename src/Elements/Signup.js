@@ -10,11 +10,7 @@ const Signup = () => {
     const [repassword, setRepassword] = useState('');
     const navigate = useNavigate();
     const {setUser} = useContext(quoteContext);
-    // const [img,setImg] = useState('');
-    // const handleImg = (e) => {
-    //   console.log(e.target.files)
-    //   setImg(e.target.files[0])
-    // }
+
     const showPassword = (e) =>{
       e.preventDefault();
         const pwd = document.getElementById('password');
@@ -31,11 +27,7 @@ const Signup = () => {
     }
     const onSignup = async (e) => {
       
-      // const formData = new FormData();
-      // formData.append('profile',img) 
-      // axios.post('http://localhost:5000/api/auth/uploadPic',formData).then((res)=>{
-      //   console.log(res);
-      // })
+
       e.preventDefault();
       if(password!= repassword)
       {
@@ -45,9 +37,7 @@ const Signup = () => {
       }
       else if(password.length<8)
       {
-        console.log("dlolololo")
         e.preventDefault();
-        // document.getElementById('password').style.boxShadow = '0px 0px 20px 5px red'
         return document.getElementById('error').innerText = "password is too short"
       }
        
@@ -56,18 +46,13 @@ const Signup = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name:name,email: email, password: password})
         };
-        fetch('http://localhost:5000/api/auth/signup', requestOptions)
+        fetch('https://jigarii-backend.vercel.app/api/auth/signup', requestOptions)
         .then(async (response) => { 
-          // console.log(response.statusText)
           const data = await response.json();
-          console.log(data)
           navigate('/login')
-          // console.log(response.user);
         })
         .catch((error)=>{
-          console.log(error)
         })
-        // .then(data => console.log(data));
 
     }
 

@@ -6,7 +6,6 @@ import Loading from './Loading'
 const Home = () => {
   const {getQuotes,quotes} = useContext(quoteContext)
   useEffect(() => {
-    console.log("Component mounted!");
     getQuotes()
     // eslint-disable-next-line
   }, []);

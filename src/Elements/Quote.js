@@ -16,29 +16,16 @@ const Quote = (props) => {
     const handleButtonClick = (e)=>{
         if(!user)
         navigate('/login')
-        console.log(e.target);
 
         if(e.target.classList.contains('x')) {
-            // console.log(data.like)
-            // console.log(docId)
             const val = updateLikeCount(data.like, 1, docId,user.uid);
-            // getQuotes();
-            console.log(val)
-            // if(val !== "Success")
-            // return;
             e.target.classList.remove('fa-regular','x')
             e.target.classList.add('fa-solid','y')
-            console.log("x")
             e.stopPropagation();
         } else if(e.target.classList.contains('y')) {
             const val = updateLikeCount(data.like, -1, docId, user.uid);
-            
-            // if(val !== "Success")
-            // return;
-            // getQuotes();
             e.target.classList.remove('fa-solid','y')
             e.target.classList.add('fa-regular','x')
-            console.log("y")
             e.stopPropagation();
         }
     }
