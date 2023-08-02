@@ -44,8 +44,7 @@ const QuoteState = (props)=> {
     }
     const getQuotes = async () => {
         setLoading(true)
-        // const response = await fetch(`https://backend-ten-psi.vercel.app/api/quote/getQuotes`, {
-        const response = await fetch(`http://localhost:5000/api/quote/getQuotes`, {
+        const response = await fetch(`https://backend-ten-psi.vercel.app/api/quote/getQuotes`, {
             method: "GET", 
             headers: {
               "Content-Type": "application/json",
