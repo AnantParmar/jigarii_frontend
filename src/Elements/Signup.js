@@ -46,7 +46,7 @@ const Signup = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name:name,email: email, password: password})
         };
-        fetch('https://backend-ten-psi.vercel.app/api/auth/signup', requestOptions)
+        fetch('https://backend-kappa-murex.vercel.app/api/auth/signup', requestOptions)
         .then(async (response) => { 
           const data = await response.json();
           navigate('/login')

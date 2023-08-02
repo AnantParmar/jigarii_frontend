@@ -48,7 +48,7 @@ const Navbar = () => {
         const formData = new FormData();
         formData.append('profile',img) 
   
-        axios.post('https://backend-ten-psi.vercel.app/api/auth/uploadPic',formData)
+        axios.post('https://backend-kappa-murex.vercel.app/api/auth/uploadPic',formData)
         .then(async (res)=>{
             const data = await res.data;
             setImgURL(data.downloadURL)
