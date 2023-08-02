@@ -15,7 +15,7 @@ const AddQuote = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quote: quote, quoteTag: quoteTag, uid: user.uid })
         };
-        fetch('https://jigarii-backend.vercel.app/api/quote/addQuote',requestOptions)
+        fetch('https://backend-ten-psi.vercel.app/api/quote/addQuote',requestOptions)
         .then(async (response)=>{
             const data = await response.json();
             navigate('/')

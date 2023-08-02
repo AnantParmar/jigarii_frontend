@@ -14,7 +14,7 @@ const QuoteState = (props)=> {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
         };
-        fetch('https://jigarii-backend.vercel.app/api/auth/getUser',requestOptions)
+        fetch('https://backend-ten-psi.vercel.app/api/auth/getUser',requestOptions)
         .then(async (response)=>{
             const resPonse = await response.json();
             
@@ -32,7 +32,7 @@ const QuoteState = (props)=> {
             body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }) 
             
         };
-        fetch('https://jigarii-backend.vercel.app/api/quote/updateLikeCount',requestOptions)
+        fetch('https://backend-ten-psi.vercel.app/api/quote/updateLikeCount',requestOptions)
         .then(async (response)=>{
             const resPonse = await response.json();
             return resPonse.result;
@@ -44,7 +44,7 @@ const QuoteState = (props)=> {
     }
     const getQuotes = async () => {
         setLoading(true)
-        const response = await fetch(`https://jigarii-backend.vercel.app/api/quote/getQuotes`, {
+        const response = await fetch(`https://backend-ten-psi.vercel.app/api/quote/getQuotes`, {
             method: "GET", 
             headers: {
               "Content-Type": "application/json",
