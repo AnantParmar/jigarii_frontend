@@ -45,6 +45,9 @@
 .loginInputDiv> input:hover {
     box-shadow: 0px 0px 5px 2px gray;
 }
+.loginInputDiv > label {
+    margin-left: 70px;
+}
 .loginInputDiv > input {
     text-align: center;
     font-weight: 500;
@@ -90,6 +93,9 @@
     }
     .loginInputDiv > input {
         margin-right: 0;
+    }
+    .loginInputDiv > label {
+        margin-left: 0;
     }
     #loginForm > div#passwordDiv > button {
         margin-right: 0;

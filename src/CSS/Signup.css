@@ -80,6 +80,7 @@
 }
 .signupInputDiv > label {
     font-size: 20px;
+    margin-left: 70px;
 }
 .signupInputDiv > input {
     text-align: center;
@@ -129,6 +130,9 @@
     #usernameDiv > label {
         width: 115px;
         margin-right: 0;
+    }
+    .signupInputDiv > label {
+        margin-left: 0;
     }
     .signupInputDiv > input {
         margin-right: 0;
