@@ -32,7 +32,7 @@ const Signup = () => {
       if(password!= repassword)
       {
         e.preventDefault();
-        document.getElementById('repassword').style.boxShadow = '0px 0px 20px 5px red'
+        document.getElementById('repassword').style.border = "3px solid red"
         return document.getElementById('error').innerText = "password does not match"
       }
       else if(password.length<8)
@@ -49,7 +49,8 @@ const Signup = () => {
         fetch('https://backend-kappa-murex.vercel.app/api/auth/signup', requestOptions)
         .then(async (response) => { 
           const data = await response.json();
-          navigate('/login')
+          document.getElementById('msg').style.display = "block"
+          // navigate('/login')
         })
         .catch((error)=>{
         })
@@ -72,15 +73,16 @@ const Signup = () => {
             </div>
             <div id='passwordDiv' className='signupInputDiv'>
                 <label htmlFor='password'>Password</label>
-                <input required type='password' name='password' id='password' value={password} onChange={(e)=>{ setPassword(e.target.value); password.length >= 7 ? e.target.style.boxShadow= "0px 0px 20px 5px green":e.target.style.boxShadow= "0px 0px 20px 5px red"}}/>
+                <input required type='password' name='password' id='password' value={password} onChange={(e)=>{ setPassword(e.target.value); password.length >= 7 ? e.target.style.border = "3px solid green":e.target.style.border = "3px solid red"}}/>
                 <button onClick={showPassword}><i id="passShowBtn" className="fa-solid fa-eye"></i></button>
             </div>
             <div id='repasswordDiv' className='signupInputDiv'>
                 <label htmlFor='repassword'>Re-enter Password</label>
-                <input required type='text' name='repassword' id='repassword' value={repassword} onChange={e=> setRepassword(e.target.value)}/>
+                <input required type='password' name='repassword' id='repassword' value={repassword} onChange={e=> setRepassword(e.target.value)}/>
             </div>
             <h4 id='error'></h4>
             <div id='submitDiv'>
+            <p id='msg'>Please Verify Email To Login</p>
             <h5 style={{margin: "10px 0px"}}>Already have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/login')}}>Login</span></h5>
                 <input disabled={!name||!email||!password||!repassword} type='submit' value={"Signup"}/>
             </div>

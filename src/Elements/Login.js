@@ -69,8 +69,8 @@ const Login = () => {
                 <input type='password' name='password' id='password' value={password} onChange={e=> setPassword(e.target.value)}/>
                 <button onClick={showPassword}><i id="passShowBtn" className="fa-solid fa-eye"></i></button>
             </div>
-            <h4 id='error'></h4>
             <div id='submitDiv'>
+            <h4 id='error'></h4>
             <h5 style={{margin: "10px 0px"}}>Don't have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/signup')}}>Signup</span></h5>
                 <input disabled={!password||!username} type='submit' value={"Login"}/>
             </div>
