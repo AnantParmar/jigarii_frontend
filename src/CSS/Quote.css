@@ -18,21 +18,35 @@
 }
 #quoteOwnerDiv {
     height: 40px;
-    width: 90%;
+    width: 100%;
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
 }
 #ownerNameSpan {
+    display: inline-block;
     height: 90%;
-    width: fit-content;
+    width: 80%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    overflow: auto;
+    white-space: nowrap;
+    /* word-wrap: none;
+    word-break:break-all; */
 }
+#ownerNameSpan::-webkit-scrollbar {
+    display: none;
+}
+
 #ownerPhotoSpan {
     height: 45px;
     width: 45px;
+    aspect-ratio: 1/1;
     margin-right: 10px;
 }
 #ownerPhotoSpan > img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: 25% 25%;
     border-radius: 50%;
