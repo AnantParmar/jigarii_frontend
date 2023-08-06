@@ -61,21 +61,21 @@ const Signup = () => {
       <div id='signupFormDiv' className='formDiv'>
       <h4 id='note'>All fields are mandatory. Password should be atleast 8 characters long.</h4>
         <form id='signupForm' onSubmit={onSignup} encType='multipart/form-data'>
-            <div id='nameDiv' className='inputDiv'>
+            <div id='nameDiv' className='signupInputDiv'>
                 <label htmlFor='name'>Name</label>
                 <input required type='text' name='name' id='name' value={name} onChange={e=> setName(e.target.value)} />
             </div> 
             
-            <div id='emailDiv' className='inputDiv'>
+            <div id='emailDiv' className='signupInputDiv'>
                 <label htmlFor='email'>Email</label>
                 <input required type='text' name='email' id='email' value={email} onChange={e=> setEmail(e.target.value)} />
             </div>
-            <div id='passwordDiv' className='inputDiv'>
+            <div id='passwordDiv' className='signupInputDiv'>
                 <label htmlFor='password'>Password</label>
                 <input required type='password' name='password' id='password' value={password} onChange={(e)=>{ setPassword(e.target.value); password.length >= 7 ? e.target.style.boxShadow= "0px 0px 20px 5px green":e.target.style.boxShadow= "0px 0px 20px 5px red"}}/>
                 <button onClick={showPassword}><i id="passShowBtn" className="fa-solid fa-eye"></i></button>
             </div>
-            <div id='repasswordDiv' className='inputDiv'>
+            <div id='repasswordDiv' className='signupInputDiv'>
                 <label htmlFor='repassword'>Re-enter Password</label>
                 <input required type='text' name='repassword' id='repassword' value={repassword} onChange={e=> setRepassword(e.target.value)}/>
             </div>

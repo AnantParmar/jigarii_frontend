@@ -8,7 +8,6 @@
 }
 
 #signupFormDiv {
-    background-color: rgba(0,0,0,0.1);
     backdrop-filter: blur(20px);
     position: absolute;
     width: 50%;
@@ -18,8 +17,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 10px rgb(65, 59, 59);
+    box-shadow: 0px 0px 15px 10px rgb(177, 167, 167);
     box-sizing: border-box;
+    border-radius: 10px;
 }
 #note {
     font-family: 'Courier New', Courier, monospace;
@@ -35,18 +35,20 @@
     z-index: 2;
 }
 
-.inputDiv {
-    width: 60%;
+.signupInputDiv {
+    width: 100%;
     height: 25%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
+    position: relative;
 }
-.inputDiv> input:hover {
+.signupInputDiv> input:hover {
     box-shadow: 0px 0px 20px 5px gray;
 }
 
-#nameDiv > label {
+/* #nameDiv > label {
     margin-right: 122px;
 }
 #emailDiv > label {
@@ -57,13 +59,14 @@
 }
 #repasswordDiv > label {
     margin-right: 11px;
-}
-#passwordDiv > input {
+} */
+/* #passwordDiv > input {
     margin-right: 70px;
-}
+} */
 #passwordDiv > button {
+    position: absolute;
+    right: 0;
     padding: 5px;
-    margin-right: 70px;
     cursor: pointer;
     border: none;
     background: transparent;
@@ -72,10 +75,10 @@
 #passwordDiv > button:hover {
     color: white;
 }
-.inputDiv > label {
+.signupInputDiv > label {
     font-size: 20px;
 }
-.inputDiv > input {
+.signupInputDiv > input {
     text-align: center;
     font-weight: 500;
     height: 30px;
@@ -88,7 +91,7 @@
 }
 
 #submitDiv {
-    width: 50%;
+    width: 100%;
     height: 100px;
     display: inline-flex;
     justify-content: space-between;
@@ -120,28 +123,11 @@
         width: 100%;
     }
     #usernameDiv > label {
-        width: 125px;
+        width: 115px;
         margin-right: 0;
     }
-    #signupForm > div#nameDiv > label {
-        margin-right: 70px;
-    }
-    #signupForm > div#emailDiv > label {
-        margin-right: 75px;
-    }
-    #signupForm > div#passwordDiv > label {
-        margin-right: 40px;
-    }
-    #signupForm > div#repasswordDiv > label {
-        width: 90px;
-        margin-right: 35px;
-    }
-    #signupForm > div#passwordDiv > input {
-        margin-right: 5px;
-    }
-    #signupForm > div#passwordDiv > button {
-        margin-right: 0;
-    }
+
+
     #signupForm > div#submitDiv {
         display: inline-flex;
         align-items: center;

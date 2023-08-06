@@ -60,11 +60,11 @@ const Login = () => {
     <div id='loginMainDiv'>
       <div id='loginFormDiv' className='formDiv'>
         <form id='loginForm'  onSubmit={onLogin}>
-            <div id='usernameDiv' className='inputDiv'>
+            <div id='usernameDiv' className='loginInputDiv'>
                 <label htmlFor='username'>User Name</label>
                 <input type='text' name='username' id='username' value={username} onChange={e=> setUserName(e.target.value)} />
             </div>
-            <div id='passwordDiv' className='inputDiv'>
+            <div id='passwordDiv' className='loginInputDiv'>
                 <label htmlFor='password'>Password</label>
                 <input type='password' name='password' id='password' value={password} onChange={e=> setPassword(e.target.value)}/>
                 <button onClick={showPassword}><i id="passShowBtn" className="fa-solid fa-eye"></i></button>

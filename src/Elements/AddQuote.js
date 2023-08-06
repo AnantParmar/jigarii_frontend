@@ -24,6 +24,7 @@ const AddQuote = () => {
   return (
     <div id='addQuoteMainDiv'>
       <div id='addQuoteFormDiv' className='formDiv'>
+      <h2>Add Quote</h2>
         <form id='addQuoteForm'  onSubmit={onAddQuote}>
             <div id='quoteDiv' className='textareaDiv'>
                 <label htmlFor='quote'>Quote</label>
