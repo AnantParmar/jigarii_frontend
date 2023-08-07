@@ -6,7 +6,10 @@
     justify-content: center;
     overflow: auto; 
 }
-
+#loginText {
+    position: absolute;
+    top: 10%;
+}
 #loginFormDiv {
     /* background-color: rgba(0,0,0,0.1); */
     backdrop-filter: blur(20px);
@@ -98,6 +101,7 @@
     }
     .loginInputDiv > label {
         margin-left: 0;
+        font-size: 1rem;
     }
     #loginForm > div#passwordDiv > button {
         margin-right: 0;
@@ -108,5 +112,8 @@
         justify-content: space-between;
         flex-direction: column;
         height: 100px;
+    }
+    div#submitDiv > input {
+        font-size: 1rem;
     }
 }

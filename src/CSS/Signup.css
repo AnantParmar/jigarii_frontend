@@ -5,8 +5,12 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
+    position: relative;
 }
-
+#signupText {
+    position: absolute;
+    top: 8%;
+}
 #signupFormDiv {
     backdrop-filter: blur(20px);
     position: absolute;
@@ -23,7 +27,7 @@
 }
 #note {
     font-family: 'Courier New', Courier, monospace;
-    color: white;
+    color: gray;
 }
 #msg {
     display: none;
@@ -75,9 +79,7 @@
     background: transparent;
     font-size: 20px;
 }
-#passwordDiv > button:hover {
-    color: white;
-}
+
 .signupInputDiv > label {
     font-size: 20px;
     margin-left: 70px;
@@ -133,6 +135,7 @@
     }
     .signupInputDiv > label {
         margin-left: 0;
+        font-size: 1rem;
     }
     .signupInputDiv > input {
         margin-right: 0;
@@ -143,5 +146,9 @@
         justify-content: space-between;
         flex-direction: column;
         height: 135px;
+
+    }
+    div#submitDiv > input {
+        font-size: 1rem;
     }
 }

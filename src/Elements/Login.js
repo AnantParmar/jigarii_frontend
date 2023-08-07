@@ -58,6 +58,7 @@ const Login = () => {
 
   return (
     <div id='loginMainDiv'>
+      <h2 id='loginText'>Login Here</h2>
       <div id='loginFormDiv' className='formDiv'>
         <form id='loginForm'  onSubmit={onLogin}>
             <div id='usernameDiv' className='loginInputDiv'>

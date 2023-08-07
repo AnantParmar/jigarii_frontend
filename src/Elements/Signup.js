@@ -59,6 +59,7 @@ const Signup = () => {
 
   return (
     <div id='signupMainDiv'>
+      <h2 id='signupText'>SignUp Here</h2>
       <div id='signupFormDiv' className='formDiv'>
       <h4 id='note'>All fields are mandatory. Password should be atleast 8 characters long.</h4>
         <form id='signupForm' onSubmit={onSignup} encType='multipart/form-data'>
@@ -82,9 +83,9 @@ const Signup = () => {
             </div>
             <h4 id='error'></h4>
             <div id='submitDiv'>
-            <p id='msg'>Please Verify Email To Login</p>
-            <h5 style={{margin: "10px 0px"}}>Already have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/login')}}>Login</span></h5>
-                <input disabled={!name||!email||!password||!repassword} type='submit' value={"Signup"}/>
+              <p id='msg'>Please Verify Email To Login</p>
+              <h5 style={{margin: "10px 0px"}}>Already have Account? <span style={{color: 'blue', textDecoration: 'Underline', cursor: "pointer"}} onClick={()=>{navigate('/login')}}>Login</span></h5>
+              <input disabled={!name||!email||!password||!repassword} type='submit' value={"Signup"}/>
             </div>
         </form>        
 
