@@ -1,5 +1,6 @@
 import './CSS/App.css';
 import AddQuote from './Elements/AddQuote';
+import Footer from './Elements/Footer';
 import Home from './Elements/Home';
 import Login from './Elements/Login';
 import Navbar from './Elements/Navbar';
@@ -19,6 +20,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="addQuote" element={<AddQuote />} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
         {/* <Home/> */}
       </QuoteState>

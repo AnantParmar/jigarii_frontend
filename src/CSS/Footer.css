@@ -1,0 +1,13 @@
+#footerMainDiv {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 10px;
+    z-index: 2;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: aquamarine;
+}
