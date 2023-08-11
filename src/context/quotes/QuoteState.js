@@ -50,7 +50,8 @@ const QuoteState = (props)=> {
             method: "GET", 
             headers: {
               "Content-Type": "application/json",
-            }
+            },
+            credentials: 'include',
           });
         const json = await response.json();
         setLoading(false)
