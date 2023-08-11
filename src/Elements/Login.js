@@ -29,7 +29,8 @@ const Login = () => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: username, password: password })
+            body: JSON.stringify({ username: username, password: password }),
+            credentials: 'include',
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/login', requestOptions)
         .then(async (response) => {
