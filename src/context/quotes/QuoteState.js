@@ -48,7 +48,6 @@ const QuoteState = (props)=> {
         const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
             method: "GET", 
             headers: {
-                
               "Content-Type": "application/json",
             }
           });
