@@ -14,7 +14,7 @@ const Quotes = () => {
   }
   return (
     <div id='quotesMainDiv'>
-      {quotes.map((item)=>{
+      {quotes && quotes.map((item)=>{
         return (
           <Quote docId={item.docId} data={item.docData} dataUser={item.user} liked={checkLikedQuote(item.docId)}/>
         )
