@@ -29,6 +29,7 @@ const QuoteState = (props)=> {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
+            credentials: "include",
             body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }) 
             
         };
@@ -45,6 +46,7 @@ const QuoteState = (props)=> {
     const getQuotes = async () => {
         console.log(document.cookie.split(';'))
         setLoading(true)
+        // const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
         const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
             method: "GET", 
             headers: {
