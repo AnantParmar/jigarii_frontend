@@ -29,7 +29,7 @@ const QuoteState = (props)=> {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            credentials: "include",
+            // credentials: "include",
             body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }) 
             
         };
