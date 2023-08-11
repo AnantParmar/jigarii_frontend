@@ -12,6 +12,8 @@
     margin-top: 50px;
     border-radius: 5px;
     box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 #quotesContent {
     height: 70%;
