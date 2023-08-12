@@ -43,6 +43,9 @@ const QuoteState = (props)=> {
         .catch((error)=>{
         })
     }
+    const setLoginedUser = ()=>{
+
+    }
     const getQuotes = async () => {
         setLoading(true)
         // const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
@@ -59,7 +62,7 @@ const QuoteState = (props)=> {
 
     }
     return (
-        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount}}>
+        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,setLoginedUser}}>
             {props.children}
         </QuoteContext.Provider>
     )

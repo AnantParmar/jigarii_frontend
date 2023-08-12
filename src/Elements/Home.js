@@ -6,6 +6,8 @@ import Loading from './Loading'
 const Home = () => {
   const {getQuotes,quotes} = useContext(quoteContext)
   useEffect(() => {
+    console.log(document.cookie)
+    // setLoginedUser()
     getQuotes()
     // eslint-disable-next-line
   }, []);
