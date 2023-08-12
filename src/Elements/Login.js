@@ -34,7 +34,8 @@ const Login = () => {
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/login', requestOptions)
         .then(async (response) => {
-          console.log(response.headers)
+          const cookie = response.headers.get('Set-Cookie')
+          console.log(cookie)
           const resPonse = await response.json();
           
           if(resPonse.result)

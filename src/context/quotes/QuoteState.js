@@ -56,7 +56,8 @@ const QuoteState = (props)=> {
             },
             credentials: 'include',
           });
-        console.log(response.headers.get('set-cookie'))
+          const cookie = response.headers.get('Set-Cookie')
+          console.log(cookie)
         const json = await response.json();
         setLoading(false)
         setQuotes(json)
