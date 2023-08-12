@@ -5,8 +5,19 @@ import Quotes from './Quotes'
 import Loading from './Loading'
 const Home = () => {
   const {getQuotes,quotes} = useContext(quoteContext)
+  function getCookie(name) {
+    const cookies = document.cookie.split('; ');
+    for (const cookie of cookies) {
+      const [cookieName, cookieValue] = cookie.split('=');
+      if (cookieName === name) {
+        return cookieValue;
+      }
+    }
+    return null;
+  }
   useEffect(() => {
-    console.log(document.cookie)
+    const secureCookie = getCookie('sessionID')
+    console.log("secureCookie is "+secureCookie)
     // setLoginedUser()
     getQuotes()
     // eslint-disable-next-line
