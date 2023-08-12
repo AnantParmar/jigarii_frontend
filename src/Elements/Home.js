@@ -16,7 +16,7 @@ const Home = () => {
     return null;
   }
   useEffect(() => {
-    const secureCookie = getCookie('sessionID')
+    const secureCookie = getCookie('random')
     console.log("secureCookie is "+secureCookie)
     // setLoginedUser()
     getQuotes()
