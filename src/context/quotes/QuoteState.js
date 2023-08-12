@@ -56,8 +56,8 @@ const QuoteState = (props)=> {
             },
             credentials: 'include',
           });
+          console.log(response)
         const json = await response.json();
-        console.log(json)
         setLoading(false)
         setQuotes(json)
 
