@@ -50,7 +50,7 @@ const QuoteState = (props)=> {
             headers: {
               "Content-Type": "application/json",
             },
-            body: {uid:uid},
+            body: JSON.stringify({ uid: uid}),
             credentials: 'include',
           });
           
