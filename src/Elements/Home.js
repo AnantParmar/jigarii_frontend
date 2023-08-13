@@ -20,8 +20,8 @@ const Home = () => {
 
     const customToken= getCookie('customToken');
     console.log("home"+customToken)
-    // if(customToken)
-    // setLoginedUser(customToken);
+    if(customToken)
+    setLoginedUser(customToken);
     getQuotes()
     // eslint-disable-next-line
   }, []);
