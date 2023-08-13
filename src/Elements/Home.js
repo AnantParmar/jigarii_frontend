@@ -20,6 +20,7 @@ const Home = () => {
     console.log("secureCookie is "+secureCookie)
     // setLoginedUser()
     const customToken=document.cookie.customToken;
+    console.log("home"+customToken)
     if(customToken)
     setLoginedUser(customToken);
     getQuotes()

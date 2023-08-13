@@ -45,6 +45,7 @@ const Login = () => {
             setUser(user)
             setData(resPonse.likedQuotesData)
             navigate('/')
+            console.log("login"+resPonse.customToken)
             document.cookie = `customToken=${resPonse.customToken}`
           }
           else {
