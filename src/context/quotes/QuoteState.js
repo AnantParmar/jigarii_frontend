@@ -46,7 +46,7 @@ const QuoteState = (props)=> {
     }
     const getLikedCount =  async (uid)=>{
         const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getLikedCount`, {
-            method: "GET", 
+            method: "POST", 
             headers: {
               "Content-Type": "application/json",
             },
