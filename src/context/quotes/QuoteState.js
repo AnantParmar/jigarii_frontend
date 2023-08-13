@@ -44,12 +44,28 @@ const QuoteState = (props)=> {
         .catch((error)=>{
         })
     }
+    const getLikedCount =  async (uid)=>{
+        const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getLikedCount`, {
+            method: "GET", 
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: {uid:uid},
+            credentials: 'include',
+          });
+          
+        const json = await response.json();
+        setData(json)
+    }
     const setLoginedUser = (token)=>{
         signInWithCustomToken(auth, token)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log(user)
             setUser(user)
+            console.log(user.uid)
+            user && user.photoURL && setImgURL(user.photoURL)
+            getLikedCount(user.uid)
         })
         .catch((error) => {
             
