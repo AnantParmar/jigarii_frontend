@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuoteContext from "./quoteContext";
-import { auth } from "../../config";
+import { auth,app } from "../../config";
+import { signInWithCustomToken } from "firebase/auth";
 const QuoteState = (props)=> {
 
     const [user, setUser] = useState('');
@@ -43,16 +44,16 @@ const QuoteState = (props)=> {
         .catch((error)=>{
         })
     }
-    const setLoginedUser = (customToken)=>{
-        auth.signInWithCustomToken(customToken)
+    const setLoginedUser = (token)=>{
+        signInWithCustomToken(auth, token)
         .then((userCredential) => {
-            // User is signed in
-
-            setUser(userCredential.user);
-            console.log('Signed in user:', userCredential.user);
+            const user = userCredential.user;
+            console.log(user)
+            setUser(user)
         })
         .catch((error) => {
-            console.error('Error signing in with custom token:', error);
+            
+            console.log(error)
         });
 
     }
