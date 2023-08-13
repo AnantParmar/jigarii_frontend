@@ -86,6 +86,7 @@ const Navbar = () => {
         setImgURL('')
         // onLogo();
         navigate('/login')
+        document.cookie = `customToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     }
 
     const navigationFun = ()=> {

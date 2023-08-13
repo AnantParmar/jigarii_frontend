@@ -1,6 +1,6 @@
 import { useState } from "react";
 import QuoteContext from "./quoteContext";
-
+import { auth } from "../../config";
 const QuoteState = (props)=> {
 
     const [user, setUser] = useState('');
@@ -43,7 +43,17 @@ const QuoteState = (props)=> {
         .catch((error)=>{
         })
     }
-    const setLoginedUser = ()=>{
+    const setLoginedUser = (customToken)=>{
+        auth.signInWithCustomToken(customToken)
+        .then((userCredential) => {
+            // User is signed in
+            
+            setUser(userCredential.user);
+            console.log('Signed in user:', userCredential.user);
+        })
+        .catch((error) => {
+            console.error('Error signing in with custom token:', error);
+        });
 
     }
     const getQuotes = async () => {
@@ -62,6 +72,7 @@ const QuoteState = (props)=> {
         setQuotes(json)
 
     }
+    
     return (
         <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,setLoginedUser}}>
             {props.children}

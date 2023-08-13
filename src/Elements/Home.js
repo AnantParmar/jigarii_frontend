@@ -19,6 +19,9 @@ const Home = () => {
     const secureCookie = getCookie('random')
     console.log("secureCookie is "+secureCookie)
     // setLoginedUser()
+    const customToken=document.cookie.customToken;
+    if(customToken)
+    setLoginedUser(customToken);
     getQuotes()
     // eslint-disable-next-line
   }, []);

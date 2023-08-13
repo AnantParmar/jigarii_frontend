@@ -45,7 +45,7 @@ const Login = () => {
             setUser(user)
             setData(resPonse.likedQuotesData)
             navigate('/')
-            document.cookie = `customeToken=${resPonse.customeToken}`
+            document.cookie = `customToken=${resPonse.customToken}`
           }
           else {
             return document.getElementById('error').innerText = resPonse.msg;
