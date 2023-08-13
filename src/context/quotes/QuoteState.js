@@ -56,8 +56,11 @@ const QuoteState = (props)=> {
             },
             credentials: 'include',
           });
-          const cookie = response.headers.get('Set-Cookie')
-          console.log(cookie)
+          const customToken = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('customtoken='))
+            .split('=')[1];
+        console.log(customToken)
         const json = await response.json();
         setLoading(false)
         setQuotes(json)
