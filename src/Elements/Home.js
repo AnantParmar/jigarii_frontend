@@ -4,7 +4,7 @@ import '../CSS/Home.css'
 import Quotes from './Quotes'
 import Loading from './Loading'
 const Home = () => {
-  const {getQuotes,quotes} = useContext(quoteContext)
+  const {getQuotes,quotes,setLoginedUser} = useContext(quoteContext)
   function getCookie(name) {
     const cookies = document.cookie.split('; ');
     for (const cookie of cookies) {
