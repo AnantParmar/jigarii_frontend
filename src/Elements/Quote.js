@@ -49,7 +49,10 @@ const Quote = (props) => {
             </div>
             <div id='quoteBtnDiv'>
                 <button  className='quoteBtn likeBtns'><i id={`${docId}-likeBtn`} className={liked?"fa-solid y fa-heart":"fa-regular x fa-heart"} style={{color: "red"}}></i></button>
-                <button id='commentBtn' className='quoteBtn commentBtns'><i className="fa-regular fa-comment"></i></button>
+                <button id='commentBtn' className='quoteBtn commentBtns'><i className="fa-regular fa-comment" onClick={()=>{
+                    const customToken = document.cookie.split('; ').find(row => row.startsWith('customtoken=')).split('=')[1];
+                    console.log(customToken)}}
+                ></i></button>
                 <button id='shareBtn' className='quoteBtn shareBtns'><i className="fa-sharp fa-solid fa-share"></i></button>
             </div>
         </div>
