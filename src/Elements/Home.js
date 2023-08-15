@@ -22,6 +22,7 @@ const Home = () => {
     console.log("home"+customTokenEnc)
     if(customTokenEnc) {
       const customToken = decryptData(customTokenEnc)
+      console.log(customToken)
       setLoginedUser(customToken);
     }
     getQuotes()
