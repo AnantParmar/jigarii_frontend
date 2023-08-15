@@ -21,9 +21,9 @@ const Home = () => {
     const customTokenEnc= getCookie('customToken');
     console.log("home"+customTokenEnc)
     if(customTokenEnc) {
-      const customToken = decryptData(customTokenEnc)
-      console.log(customToken)
-      setLoginedUser(customToken);
+      const data = decryptData(customTokenEnc)
+      console.log(data.customToken)
+      setLoginedUser(data.customToken);
     }
     getQuotes()
     // eslint-disable-next-line
