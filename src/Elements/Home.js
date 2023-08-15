@@ -19,10 +19,11 @@ const Home = () => {
   useEffect(() => {
 
     const customTokenEnc= getCookie('customToken');
-    const customToken = decryptData(customTokenEnc)
-    console.log("home"+customToken)
-    if(customToken)
-    setLoginedUser(customToken);
+    console.log("home"+customTokenEnc)
+    if(customTokenEnc) {
+      const customToken = decryptData(customTokenEnc)
+      setLoginedUser(customToken);
+    }
     getQuotes()
     // eslint-disable-next-line
   }, []);
