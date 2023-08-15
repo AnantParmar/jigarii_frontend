@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuoteContext from "./quoteContext";
 import { auth,app } from "../../config";
 import { signInWithCustomToken } from "firebase/auth";
+const CryptoJS = require("crypto-js");
 const QuoteState = (props)=> {
 
     const [user, setUser] = useState('');
@@ -106,8 +107,17 @@ const QuoteState = (props)=> {
     
     return '';
     }
+    const encryptData = (data)=>{
+        var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), process.env.REACT_APP_SECRET_ENERGY).toString();
+        return ciphertext;
+    }
+    const decryptData = (ciphertext)=>{
+        var bytes = CryptoJS.AES.decrypt(ciphertext, process.env.REACT_APP_SECRET_ENERGY);
+        var data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+        return data;
+    }
     return (
-        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,setLoginedUser,getCookie}}>
+        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,setLoginedUser,getCookie,encryptData,decryptData}}>
             {props.children}
         </QuoteContext.Provider>
     )
