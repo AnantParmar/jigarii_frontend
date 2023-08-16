@@ -6,7 +6,7 @@ const Login = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const {setUser,setImgURL,setData,encryptData} = useContext(quoteContext);
+    const {setUser,setImgURL,setData,userSetPersistence} = useContext(quoteContext);
     const showPassword = (e) =>{
       e.preventDefault();
         const pwd = document.getElementById('password');
@@ -45,9 +45,7 @@ const Login = () => {
             setUser(user)
             setData(resPonse.likedQuotesData)
             navigate('/')
-            console.log("login"+resPonse.customToken)
-            const customTokenEnc = encryptData({customToken: resPonse.customToken})
-            document.cookie = `customToken=${customTokenEnc}`
+            userSetPersistence()
           }
           else {
             return document.getElementById('error').innerText = resPonse.msg;

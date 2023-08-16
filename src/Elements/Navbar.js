@@ -3,7 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import '../CSS/Navbar.css'
 import quoteContext from '../context/quotes/quoteContext'
 import axios from 'axios'
-import logo from '../Assets/img/logo-1.png'
+import { auth } from '../config'
+import {signOut} from 'firebase/auth'
 const Navbar = () => {
     const {user, setUser,imgURL, getUser,setImgURL} = useContext(quoteContext);
     const navigate = useNavigate();
@@ -87,6 +88,14 @@ const Navbar = () => {
         // onLogo();
         navigate('/login')
         document.cookie = `customToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        signOut(auth)
+        .then(() => {
+
+        auth.setPersistence(browserSessionPersistence);
+        })
+  .catch((error) => {
+    // Handle error
+  });
     }
 
     const navigationFun = ()=> {

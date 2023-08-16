@@ -17,14 +17,6 @@ const Home = () => {
   // }
 
   useEffect(() => {
-
-    const customTokenEnc= getCookie('customToken');
-    console.log("home"+customTokenEnc)
-    if(customTokenEnc) {
-      const data = decryptData(customTokenEnc)
-      console.log(data.customToken)
-      setLoginedUser(data.customToken);
-    }
     getQuotes()
     // eslint-disable-next-line
   }, []);
