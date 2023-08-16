@@ -75,10 +75,22 @@ const QuoteState = (props)=> {
         setPersistence(auth, browserLocalPersistence)
         .then(() => {
             console.log("setted persistence ")
+            checkPersistence()
         })
         .catch((error) => {
             // Handle error
         });
+    } 
+    const checkPersistence = ()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              setUser(user)
+              getLikedCount(user)
+              console.log('Persisted user:', user);
+            } else {
+              console.log('No persisted user');
+            }
+        })
     } 
     return (
         <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,userSetPersistence,getLikedCount}}>
