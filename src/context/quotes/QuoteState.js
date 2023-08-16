@@ -76,6 +76,7 @@ const QuoteState = (props)=> {
         .then(() => {
             console.log("setted persistence ")
             checkPersistence()
+            console.log(auth.currentUser)
         })
         .catch((error) => {
             // Handle error
