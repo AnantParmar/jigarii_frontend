@@ -20,8 +20,7 @@ const Home = () => {
     });
 
     getQuotes()
-    // eslint-disable-next-line
-  }, []);
+  }, [auth,setUser, getLikedCount, getQuotes]);
   return (
     <div id='homeDiv'>
       <Loading/>
