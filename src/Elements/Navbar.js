@@ -4,7 +4,7 @@ import '../CSS/Navbar.css'
 import quoteContext from '../context/quotes/quoteContext'
 import axios from 'axios'
 import { auth } from '../config'
-import {signOut} from 'firebase/auth'
+import {signOut,browserSessionPersistence} from 'firebase/auth'
 const Navbar = () => {
     const {user, setUser,imgURL, getUser,setImgURL} = useContext(quoteContext);
     const navigate = useNavigate();
