@@ -9,6 +9,8 @@ const Home = () => {
   const {getQuotes,getLikedCount,setUser} = useContext(quoteContext)
 
   useEffect(() => {
+    const user = auth.currentUser;
+    console.log(user)
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user)
@@ -20,7 +22,7 @@ const Home = () => {
     });
 
     getQuotes()
-  }, [auth,setUser, getLikedCount, getQuotes]);
+  }, [auth]);
   return (
     <div id='homeDiv'>
       <Loading/>
