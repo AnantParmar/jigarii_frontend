@@ -3,20 +3,22 @@ import quoteContext from "../context/quotes/quoteContext"
 import '../CSS/Home.css'
 import Quotes from './Quotes'
 import Loading from './Loading'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../config'
 const Home = () => {
-  const {getQuotes,quotes,setLoginedUser,getCookie,decryptData} = useContext(quoteContext)
-  // function getCookie(name) {
-  //   const cookies = document.cookie.split('; ');
-  //   for (const cookie of cookies) {
-  //     const [cookieName, cookieValue] = cookie.split('=');
-  //     if (cookieName === name) {
-  //       return cookieValue;
-  //     }
-  //   }
-  //   return null;
-  // }
+  const {getQuotes,getLikedCount,setUser} = useContext(quoteContext)
 
   useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user)
+        getLikedCount(user)
+        console.log('Persisted user:', user);
+      } else {
+        console.log('No persisted user');
+      }
+    });
+
     getQuotes()
     // eslint-disable-next-line
   }, []);

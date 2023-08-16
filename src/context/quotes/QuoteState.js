@@ -58,7 +58,19 @@ const QuoteState = (props)=> {
         setQuotes(json)
 
     }
-
+    const getLikedCount =  async (uid)=>{
+        const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getLikedCount`, {
+            method: "POST", 
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ uid: uid}),
+            credentials: 'include',
+          });
+          
+        const json = await response.json();
+        setData(json)
+    }
     const userSetPersistence = ()=>{
         setPersistence(auth, browserLocalPersistence)
         .then(() => {
@@ -69,7 +81,7 @@ const QuoteState = (props)=> {
         });
     } 
     return (
-        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,userSetPersistence}}>
+        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,userSetPersistence,getLikedCount}}>
             {props.children}
         </QuoteContext.Provider>
     )
