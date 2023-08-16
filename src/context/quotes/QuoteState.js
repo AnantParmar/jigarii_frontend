@@ -74,7 +74,7 @@ const QuoteState = (props)=> {
     const userSetPersistence = ()=>{
         setPersistence(auth, browserLocalPersistence)
         .then(() => {
-            // Now the authentication state will be remembered across browser sessions
+            console.log("setted persistence ")
         })
         .catch((error) => {
             // Handle error
