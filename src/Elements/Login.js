@@ -2,12 +2,13 @@ import {React, useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import quoteContext from '../context/quotes/quoteContext'
 import '../CSS/Login.css'
-import { auth } from '../config'
+import { auth,browserLocalPersistence } from '../config'
+import { setPersistence } from 'firebase/auth'
 const Login = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const {setUser,setImgURL,setData,userSetPersistence} = useContext(quoteContext);
+    const {setUser,setImgURL,setData,checkPersistence} = useContext(quoteContext);
     const showPassword = (e) =>{
       e.preventDefault();
         const pwd = document.getElementById('password');
@@ -46,7 +47,8 @@ const Login = () => {
             setUser(user)
             setData(resPonse.likedQuotesData)
             console.log(auth.currentUser)
-            userSetPersistence()
+            await setPersistence(auth, browserLocalPersistence);
+            checkPersistence()
             navigate('/')
           }
           else {
