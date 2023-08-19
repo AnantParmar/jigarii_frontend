@@ -1,7 +1,7 @@
 import { useState } from "react";
 import QuoteContext from "./quoteContext";
 import { auth } from "../../config";
-import { setPersistence,browserLocalPersistence } from "firebase/auth";
+import { setPersistence,browserLocalPersistence,onAuthStateChanged } from "firebase/auth";
 const QuoteState = (props)=> {
 
     const [user, setUser] = useState('');
@@ -44,7 +44,6 @@ const QuoteState = (props)=> {
     }
     const getQuotes = async () => {
         setLoading(true)
-        // const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
         const response = await fetch(`https://backend-kappa-murex.vercel.app/api/quote/getQuotes`, {
             method: "GET", 
             headers: {
