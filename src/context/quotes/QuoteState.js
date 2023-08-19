@@ -70,16 +70,15 @@ const QuoteState = (props)=> {
         const json = await response.json();
         setData(json)
     }
-    const userSetPersistence = ()=>{
-        setPersistence(auth, browserLocalPersistence)
-        .then(() => {
-            console.log("setted persistence ")
-            checkPersistence()
+    const userSetPersistence = async ()=>{
+        try {
+            await setPersistence(auth, browserLocalPersistence);
+            console.log("setted persistence");
             console.log(auth.currentUser)
-        })
-        .catch((error) => {
-            // Handle error
-        });
+            checkPersistence();
+        } catch (error) {
+            console.log(error)
+        }
     } 
     const checkPersistence = ()=>{
         onAuthStateChanged(auth, (user) => {
