@@ -1,7 +1,5 @@
 import { useState } from "react";
 import QuoteContext from "./quoteContext";
-import { auth } from "../../config";
-import { setPersistence,browserLocalPersistence,onAuthStateChanged } from "firebase/auth";
 const QuoteState = (props)=> {
 
     const [user, setUser] = useState('');
@@ -70,29 +68,29 @@ const QuoteState = (props)=> {
         const json = await response.json();
         setData(json)
     }
-    const userSetPersistence = async ()=>{
-        try {
-            await setPersistence(auth, browserLocalPersistence);
-            console.log("setted persistence");
-            console.log(auth.currentUser)
-            checkPersistence();
-        } catch (error) {
-            console.log(error)
-        }
-    } 
-    const checkPersistence = ()=>{
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              setUser(user)
-              getLikedCount(user)
-              console.log('Persisted user:', user);
-            } else {
-              console.log('No persisted user');
-            }
-        })
-    } 
+    // const userSetPersistence = async ()=>{
+    //     try {
+    //         await setPersistence(auth, browserLocalPersistence);
+    //         console.log("setted persistence");
+    //         console.log(auth.currentUser)
+    //         checkPersistence();
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // } 
+    // const checkPersistence = ()=>{
+    //     onAuthStateChanged(auth, (user) => {
+    //         if (user) {
+    //           setUser(user)
+    //           getLikedCount(user)
+    //           console.log('Persisted user:', user);
+    //         } else {
+    //           console.log('No persisted user');
+    //         }
+    //     })
+    // } 
     return (
-        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,userSetPersistence,getLikedCount}}>
+        <QuoteContext.Provider value={{user,data,imgURL,quotes,loading, setUser,setData,getUser,setImgURL,getQuotes,updateLikeCount,getLikedCount}}>
             {props.children}
         </QuoteContext.Provider>
     )
