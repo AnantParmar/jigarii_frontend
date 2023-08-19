@@ -2,8 +2,8 @@ import {React, useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import quoteContext from '../context/quotes/quoteContext'
 import '../CSS/Login.css'
-import { auth,browserLocalPersistence } from '../config'
-import { setPersistence } from 'firebase/auth'
+import { auth } from '../config'
+import { setPersistence,browserLocalPersistence } from 'firebase/auth'
 const Login = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
