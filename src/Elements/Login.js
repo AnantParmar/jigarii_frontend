@@ -47,7 +47,6 @@ const Login = () => {
             setUser(user)
             setData(resPonse.likedQuotesData)
             console.log(auth.currentUser)
-            await setPersistence(auth, browserLocalPersistence);
             checkPersistence()
             navigate('/')
           }
