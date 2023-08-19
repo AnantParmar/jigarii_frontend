@@ -2,6 +2,7 @@ import {React, useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import quoteContext from '../context/quotes/quoteContext'
 import '../CSS/Login.css'
+import { auth } from '../config'
 const Login = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -44,8 +45,9 @@ const Login = () => {
             user && user.photoURL && setImgURL(user.photoURL)
             setUser(user)
             setData(resPonse.likedQuotesData)
-            navigate('/')
+            console.log(auth.currentUser)
             userSetPersistence()
+            navigate('/')
           }
           else {
             return document.getElementById('error').innerText = resPonse.msg;

@@ -13,7 +13,7 @@ const Home = () => {
     console.log(user)
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user)
+        setUser()
         getLikedCount(user)
         console.log('Persisted user:', user);
       } else {
