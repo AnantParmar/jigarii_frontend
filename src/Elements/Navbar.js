@@ -84,20 +84,25 @@ const Navbar = () => {
     }
 
     const logout = (e) => {
-        closePicFormDiv()
-        setUser('')
-        setImgURL('')
-        // onLogo();
-        navigate('/login')
-        document.cookie = `customToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        signOut(auth)
-        .then(() => {
-
-        auth.setPersistence(browserSessionPersistence);
+        
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username, password: password }),
+            credentials: 'include',
+        };
+        fetch('https://backend-kappa-murex.vercel.app/api/auth/logout',requestOptions)
+        .then((response)=>{
+            closePicFormDiv()
+            setUser('')
+            setImgURL('')
+            navigate('/login')
         })
-  .catch((error) => {
-    // Handle error
-  });
+        .catch((error)=>{
+
+        })
+
+
     }
 
     const navigationFun = ()=> {
