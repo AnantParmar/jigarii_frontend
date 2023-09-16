@@ -86,9 +86,8 @@ const Navbar = () => {
     const logout = (e) => {
         
         const requestOptions = {
-            method: 'POST',
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username: username, password: password }),
             credentials: 'include',
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/logout',requestOptions)
