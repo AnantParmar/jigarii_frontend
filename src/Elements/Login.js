@@ -6,7 +6,7 @@ const Login = () => {
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const {setUser,setImgURL,setData,checkPersistence} = useContext(quoteContext);
+    const {setUser,setImgURL,setData} = useContext(quoteContext);
     const showPassword = (e) =>{
       e.preventDefault();
         const pwd = document.getElementById('password');

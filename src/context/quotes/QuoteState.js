@@ -12,6 +12,7 @@ const QuoteState = (props)=> {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/getUser',requestOptions)
         .then(async (response)=>{
@@ -27,7 +28,8 @@ const QuoteState = (props)=> {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             // credentials: "include",
-            body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }) 
+            body: JSON.stringify({ val: updateValue, docId: docId,uid:uid }),
+            credentials: 'include', 
             
         };
         fetch('https://backend-kappa-murex.vercel.app/api/quote/updateLikeCount',requestOptions)
