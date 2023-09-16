@@ -49,10 +49,10 @@ const Navbar = () => {
         
         const formData = new FormData();
         formData.append('profile',img) 
-        const requestData = {
-            Credential: "include"
-          };
-        axios.post('https://backend-kappa-murex.vercel.app/api/auth/uploadPic',formData,requestData)
+        const axiosConfig = {
+            withCredentials: true, // Include credentials (cookies) in the request
+        };
+        axios.post('https://backend-kappa-murex.vercel.app/api/auth/uploadPic',formData,axiosConfig)
         .then(async (res)=>{
             const data = await res.data;
             setImgURL(data.downloadURL)
