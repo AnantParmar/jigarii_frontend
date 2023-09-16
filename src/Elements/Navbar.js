@@ -92,13 +92,14 @@ const Navbar = () => {
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/logout',requestOptions)
         .then((response)=>{
+            console.log(response)
             closePicFormDiv()
             setUser('')
             setImgURL('')
             navigate('/login')
         })
         .catch((error)=>{
-
+            console.log(error)
         })
 
 
