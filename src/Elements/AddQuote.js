@@ -13,6 +13,7 @@ const AddQuote = () => {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
             body: JSON.stringify({ quote: quote, quoteTag: quoteTag, uid: user.uid })
         };
         fetch('https://backend-kappa-murex.vercel.app/api/quote/addQuote',requestOptions)
