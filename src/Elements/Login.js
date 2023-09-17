@@ -47,7 +47,8 @@ const Login = () => {
             navigate('/')
           }
           else {
-            return document.getElementById('error').innerText = resPonse.msg;
+            console.log(resPonse)
+            document.getElementById('error').innerText = resPonse.msg;
           }
         })
         .catch((error)=> {
