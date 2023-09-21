@@ -91,8 +91,9 @@ const Navbar = () => {
             credentials: 'include',
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/logout',requestOptions)
-        .then((response)=>{
-            console.log(response.json())
+        .then(async (response)=>{
+            const json = await response.json();
+            console.log(json)
             closePicFormDiv()
             setUser('')
             setImgURL('')
