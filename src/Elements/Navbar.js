@@ -92,7 +92,7 @@ const Navbar = () => {
         };
         fetch('https://backend-kappa-murex.vercel.app/api/auth/logout',requestOptions)
         .then((response)=>{
-            console.log(response)
+            console.log(response.json())
             closePicFormDiv()
             setUser('')
             setImgURL('')
@@ -101,8 +101,6 @@ const Navbar = () => {
         .catch((error)=>{
             console.log(error)
         })
-
-
     }
 
     const navigationFun = ()=> {

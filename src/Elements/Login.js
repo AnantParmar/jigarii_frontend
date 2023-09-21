@@ -54,9 +54,7 @@ const Login = () => {
         .catch((error)=> {
           e.preventDefault();
           document.getElementById('error').innerText = error
-        })
-
-        
+        })  
     }
 
   return (
