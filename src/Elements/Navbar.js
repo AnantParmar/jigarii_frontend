@@ -98,6 +98,7 @@ const Navbar = () => {
             setUser('')
             setImgURL('')
             navigate('/login')
+            window.location.reload();
         })
         .catch((error)=>{
             console.log(error)
